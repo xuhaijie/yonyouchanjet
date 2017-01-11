@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<!--
+            __     __
+           /  \~~~/  \                                                                       |      金华激石信息技术有限公司      |
+     ,----(     ..    )
+    /      \__     __/
+   /|         (\  |(
+  ^ \   /___\  /\ |
+     |__|   |__|-"
+-->
+<html>
+<head>
+	<include file="Public:head" />
+</head>
+<body>
+<include file="Public:header" />
+	<div class="main">
+		<div class="product"></div>
+		<a class="product-more btn-span-10" href="custom/24"><sapn>了解更多</sapn></a>
+	</div>
+<div class="case-about">
+	<div class="main">
+		<div class="case">
+			<div class="case-left">
+				<p>用户案例/CASE</p>
+				<div class="case-left-nr">
+					<ul>
+						<li><i class="icon1 btn-i-1"></i><a href="product/39" class="btn-span-20" ><span data-hover="商业贸易">商业贸易</span></a></li>
+						<li><i class="icon2 btn-i-1"></i><a href="product/35" class="btn-span-20" ><span data-hover="食品行业">食品行业</span></a></li>
+						<li><i class="icon3 btn-i-1"></i><a href="product/37" class="btn-span-20" ><span data-hover="机械行业">机械行业</span></a></li>
+						<li><i class="icon4 btn-i-1"></i><a href="product/36" class="btn-span-20" ><span data-hover="电子行业">电子行业</span></a></li>
+						<li><i class="icon5 btn-i-1"></i><a href="product/38" class="btn-span-20" ><span data-hover="房地产">房地产</span></a></li>
+						<li><i class="icon6 btn-i-1"></i><a href="product/40" class="btn-span-20" ><span data-hover="工程项目">工程项目</span></a></li>
+					</ul>
+				</div>
+			</div>
+			<a class="case-qt" href="product/type/35"></a>
+		</div>
+		<div class="about">
+			<div class="about-dh">关于我们<a href="company">MORE+</a></div>
+			<div class="about-nr">
+				<img src="__ROOT__/__UPLOAD__/{$intro[img]}"/>
+				<p>{$intro['description']|msubstr=0,200,'utf-8',true}</p>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="main">
+	<div class="news">
+		<div class="news-dh">坤迪动态</div>
+		<div class="news-nr">
+			<div class="news-left">
+				<volist name="news1" id="vo" offset="0" length="1">
+					<li>
+						<img src="__ROOT__/__UPLOAD__/{$vo.img}"/>
+						<p>{$vo.title}</p>
+						<span>{$vo.description|mb_substr=0,100,'utf-8'}...</span>
+						<a href="__APP__/news/{$vo.id}" >了解更多</a>
+					</li>
+				</volist>
+			</div>
+			<div class="news-right">
+				<volist name="news" id="vo" offset="0" length="7">
+					<li><a href="__APP__/news/{$vo.id}">{$vo.title|mb_substr=0,25,'utf-8'}...<i>{$vo.time|mb_substr=0,10,'utf-8'}</i></a></li>
+				</volist>
+				<a class="more btn-span-8" href="news/type/4"><span>MORE+</span></a>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<include file="Public:footer" />
+</body>
+</html>
+
+
+
+<script>
+	$(function(){
+		$(".btn-i-1").each(function(){
+			$(this).wrap("<div class='btn1'><div class='btn2'></div></div>");
+			var btnI = $(this).clone();
+			$(this).parent().append(btnI);
+			var btnMarginTop = $(this).css("margin-top");
+			var btnWidth = $(this).width();
+			var btnHeight = $(this).height();
+			$(this).css({display:"block",position:"absolute",left:0,margin:0,padding:0,});
+			$(this).next(".btn-i-1").css({display:"block",position:"absolute",margin:0,padding:0,left:btnWidth});
+			$(this).parents(".btn1").css({width:btnWidth,height:btnHeight,overflow:"hidden",margin:"0 auto",marginTop:btnMarginTop});
+			$(this).parent(".btn2").css({position: "relative",left:0});
+			$(this).parents(".btn1").hover(function() {
+				$(this).find(".btn2").stop().animate({left: -btnWidth});
+			},function(){
+				$(this).find(".btn2").stop().animate({left:0});
+			})
+		})
+	})
+</script>

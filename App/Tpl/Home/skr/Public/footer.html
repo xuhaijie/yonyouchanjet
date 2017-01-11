@@ -1,0 +1,27 @@
+<div class="clear2"></div>
+<div class="footer">
+    <div class="link">
+        <div class="main">
+            <span>友情链接 / LINK</span>
+            <volist name="link" id="vo" offset="0" length="5">
+                <a href="{$vo.www}" target="_blank" rel="nofollow">{$vo.title}</a>
+            </volist>
+        </div>
+    </div>
+    <div class="main">
+        <div class="footer-left">{$config['standby2']}</div>
+        <div class="wap"></div>
+        <div class="ff">
+            <li>版权所有：　{$config['web_name']} </li>
+            <li> 咨询热线：{$config['tel']}　传 真：{$config['fax']}</li>
+            <li> 联系人：{$config['linkman']}　联系电话：{$config['mobile']}　</li>
+            <li> QQ：{$config.kefu_qq.0.qq}　邮箱：<a href="mailto:{$config['email']}">{$config['email']}</a></li>
+            <li> 地址：{$config['address']}</li>
+            <li> {$config['standby1']}</li>
+            <li>网页设计：激石信息技术<a href="__APP__/admin" target="_blank">[后台登陆]</a></a><a href="__ROOT__/Sitemap">网站地图</a><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1261133545'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1261133545%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));</script></li>
+        </div>
+    </div>
+</div>
+
+<include file="Public:f_lode"/>
+{$liuliangbao}
